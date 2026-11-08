@@ -1,0 +1,12 @@
+[Unit]
+Description=Restrict AtlaHub Zaatra private port to Kali VPN address
+Before=docker.service
+After=local-fs.target
+
+[Service]
+Type=oneshot
+ExecStart=/opt/atlahub-zaatra-university/kali-firewall.sh
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target

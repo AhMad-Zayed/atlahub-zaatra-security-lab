@@ -1,0 +1,5 @@
+# Explicit private interface only; base loopback mapping is retained by Compose merge.
+services:
+  vulnerable:
+    ports:
+      - "192.168.151.5:28088:80"
