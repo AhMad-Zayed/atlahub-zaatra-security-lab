@@ -1,0 +1,26 @@
+[
+  {
+    "file": "jerusalem.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Panorama_of_Jerusalem_from_Mount_of_Olives.jpg",
+    "artist": "<a href=\"//commons.wikimedia.org/wiki/User:Jakub_CA\" title=\"User:Jakub CA\">Jakub CA</a>",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "changes": "Resized Wikimedia thumbnail; displayed with CSS cropping."
+  },
+  {
+    "file": "petra.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Petra_Treasury.jpg",
+    "artist": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:Cybjorg&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Cybjorg (page does not exist)\">David Bjorgen</a>",
+    "license": "CC BY-SA 3.0",
+    "license_url": "http://creativecommons.org/licenses/by-sa/3.0/",
+    "changes": "Resized Wikimedia thumbnail; displayed with CSS cropping."
+  },
+  {
+    "file": "istanbul.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Bosphorus,_Istanbul_(P1100227).jpg",
+    "artist": "<a href=\"//commons.wikimedia.org/wiki/User:MB-one\" title=\"User:MB-one\">Matti Blume</a>",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "changes": "Resized Wikimedia thumbnail; displayed with CSS cropping."
+  }
+]

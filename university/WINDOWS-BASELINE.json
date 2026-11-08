@@ -1,0 +1,15 @@
+{
+  "compose.yaml": "c61fb2992e2d3b1ce826cff4a6e1487fe197a14ea772d6285ab24cb7d96f6b7a",
+  "OBSERVED-RESULTS.md": "7b0992d1fc94db195d5ad9e1d45c6f6a5892366c6d24aa552a1e6f4ffe52cbd8",
+  "config/apache-single-worker.conf": "9ab52695c601bd183a0e2f36bc037854d97805a3c3da1ecb77d1ad74fe020c4a",
+  "config/mitigated.ini": "4d09801b351bd43af3a4a80bd6f5103f998279fc96baba7c52f3c4d3632135b0",
+  "config/servername.conf": "9f862b9a88a1b034f31096b14efdb106220c7c802f54e3bcab190affaed9a85e",
+  "config/vulnerable.ini": "9ba9c578b64d3ee1502827378a9b35bbb52aabd52fcf15b0e3081a2c00f51b04",
+  "www/index.php": "3f85e93ffa560d999b10b5233c4a6b89b6de8467f9f9a8e12a41b43dced7332a",
+  "www/probe.php": "b56c59f402a5bb7c90df561b7447485d69669a1a8a7fb80f9534923d346a1a66",
+  "www/shell.php": "35cc1854f4998da809f0a73161139f65509d6a65611dc612be242287c19a249c",
+  "www/status.php": "c65c12f2a296d5dfaed1e3ea026e89879f50ab34955dfb147d37f547e809d62e",
+  "www/assets/app.js": "1539f5366c1011d16794366ad7c114b2631911c833c83acfe3523fc5f99000f7",
+  "www/assets/Banner.jpg": "b967d7f0a10db7614f2ee16fd0616aeb55c4a5a71e5e272ddcb27f45cf67bec1",
+  "www/assets/styles.css": "ddbd90bdf36b774f96be7ab420bb5a152b221a7770352ceb8c1d2cb59981392e"
+}

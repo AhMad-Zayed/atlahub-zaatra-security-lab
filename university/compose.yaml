@@ -1,0 +1,61 @@
+name: atlahub-zaatra-university
+x-common: &common
+  restart: "no"
+  mem_limit: 256m
+  cpus: 1.0
+  pids_limit: 128
+  shm_size: 64m
+  security_opt:
+    - no-new-privileges:true
+  tmpfs:
+    - /tmp:size=67108864,mode=1777
+    - /var/run/apache2:size=8388608,mode=0755
+    - /var/lock/apache2:size=8388608,mode=0755
+  networks: [isolated]
+  healthcheck:
+    test: [CMD-SHELL, "kill -0 1 && (grep -q ':0050 ' /proc/net/tcp || grep -q ':0050 ' /proc/net/tcp6)"]
+    interval: 3s
+    timeout: 2s
+    retries: 20
+    start_period: 5s
+  logging:
+    driver: json-file
+    options:
+      max-size: "5m"
+      max-file: "2"
+services:
+  vulnerable:
+    <<: *common
+    image: atlahub/zaatra-university:vulnerable-8.4.26
+    build:
+      context: .
+      args:
+        PHP_BASE: php:8.4.26-apache@sha256:b0ae0e0d4a3b7f0e800017482752b94f58ab049f2d7fcd108e5452afce3f50d1
+        PHP_CONFIG: vulnerable.ini
+    environment: {LAB_VARIANT: vulnerable}
+    ports: ["127.0.0.1:28088:80"]
+  mitigated:
+    <<: *common
+    image: atlahub/zaatra-university:mitigated-8.4.26
+    build:
+      context: .
+      args:
+        PHP_BASE: php:8.4.26-apache@sha256:b0ae0e0d4a3b7f0e800017482752b94f58ab049f2d7fcd108e5452afce3f50d1
+        PHP_CONFIG: mitigated.ini
+    environment: {LAB_VARIANT: mitigated}
+    ports: ["127.0.0.1:28090:80"]
+  patched:
+    <<: *common
+    image: atlahub/zaatra-university:patched-8.4.27
+    build:
+      context: .
+      args:
+        PHP_BASE: php:8.4.27-apache@sha256:4a495b1ae6a66f00f2eb3b0eae4f8787cad32ba9298ea85576af64ed5fb74813
+        PHP_CONFIG: vulnerable.ini
+    environment: {LAB_VARIANT: patched}
+    ports: ["127.0.0.1:28089:80"]
+networks:
+  isolated:
+    driver: bridge
+    driver_opts:
+      com.docker.network.bridge.enable_ip_masquerade: "false"
