@@ -66,7 +66,7 @@ The original INI setting `expose_php=On` produces the actual runtime `X-Powered-
 ```sh
 curl -I http://127.0.0.1:28088/
 curl -sD - -o /dev/null http://127.0.0.1:28088/
-nmap -sT -Pn -p 28088,28089,28090 --script http-headers --script-args 'http-headers.path=/' 127.0.0.1
+nmap -sT -sV --version-light -Pn -p 28088,28089,28090 --script http-headers --script-args 'http-headers.path=/' 127.0.0.1
 ```
 
 Disclosure is deliberate and limited to the private educational deployment. PHP 8.4.27 is the requested comparison image, not a claim that it addresses every present or future PHP issue. For a hardened non-lab deployment, use a currently supported patched PHP image, `expose_php=Off`, `display_errors=Off`, an appropriate multiworker configuration, HTTPS and normal production access controls. Those production changes are intentionally outside this reproducible lab.

@@ -1,0 +1,47 @@
+Starting Nmap 7.94SVN ( https://nmap.org ) at 2026-11-09 00:12 IST
+Nmap scan report for localhost (127.0.0.1)
+Host is up (0.00099s latency).
+
+PORT      STATE SERVICE VERSION
+28088/tcp open  http    Apache httpd 2.4.69 ((Debian))
+| http-headers: 
+|   Date: Sun, 08 Nov 2026 22:13:03 GMT
+|   Server: Apache/2.4.69 (Debian)
+|   X-Powered-By: PHP/8.4.26
+|   Cache-Control: no-store
+|   X-Content-Type-Options: nosniff
+|   X-Frame-Options: DENY
+|   Content-Security-Policy: default-src 'self'; img-src 'self'; style-src 'self'; script-src 'self'; base-uri 'none'; form-action 'self'; frame-ancestors 'none'
+|   Connection: close
+|   Content-Type: text/html; charset=utf-8
+|   
+|_  (Request type: HEAD)
+28089/tcp open  http    Apache httpd 2.4.69 ((Debian))
+| http-headers: 
+|   Date: Sun, 08 Nov 2026 22:13:03 GMT
+|   Server: Apache/2.4.69 (Debian)
+|   X-Powered-By: PHP/8.4.27
+|   Cache-Control: no-store
+|   X-Content-Type-Options: nosniff
+|   X-Frame-Options: DENY
+|   Content-Security-Policy: default-src 'self'; img-src 'self'; style-src 'self'; script-src 'self'; base-uri 'none'; form-action 'self'; frame-ancestors 'none'
+|   Connection: close
+|   Content-Type: text/html; charset=utf-8
+|   
+|_  (Request type: HEAD)
+28090/tcp open  http    Apache httpd 2.4.69 ((Debian))
+| http-headers: 
+|   Date: Sun, 08 Nov 2026 22:13:03 GMT
+|   Server: Apache/2.4.69 (Debian)
+|   X-Powered-By: PHP/8.4.26
+|   Cache-Control: no-store
+|   X-Content-Type-Options: nosniff
+|   X-Frame-Options: DENY
+|   Content-Security-Policy: default-src 'self'; img-src 'self'; style-src 'self'; script-src 'self'; base-uri 'none'; form-action 'self'; frame-ancestors 'none'
+|   Connection: close
+|   Content-Type: text/html; charset=utf-8
+|   
+|_  (Request type: HEAD)
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 11.94 seconds

@@ -1,3 +1,13 @@
+## AtlaHub Zaatra — Palestine Ahliya University Edition
+
+Developed and Customized by AtlaHub Tech. Prepared Exclusively for Palestine Ahliya University.
+
+The Arabic tourism interface, pinned Docker packaging, private Horizon deployment guide, screenshots and acceptance checks are in **[university/](university/README.md)** on branch `university/zaatra-atlahub`.
+
+Original research and components remain credited to RedSide Security and the contributors named in NOTICE. The upstream README follows unchanged.
+
+---
+
 <div align="center">
 
 ![php2shell — pre-auth RCE lab & toolkit](docs/img/header.png)

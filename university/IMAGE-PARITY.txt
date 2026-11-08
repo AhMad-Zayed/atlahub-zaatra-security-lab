@@ -1,0 +1,6 @@
+PASS: identical config digest and rootfs layers: vulnerable-8.4.26
+PASS: identical config digest and rootfs layers: mitigated-8.4.26
+PASS: identical config digest and rootfs layers: patched-8.4.27
+PASS: remote LAN cannot reach lab port 28088
+PASS: remote LAN cannot reach lab port 28089
+PASS: remote LAN cannot reach lab port 28090

@@ -4,5 +4,32 @@
     "vulnerable-8.4.26": "sha256:8edea3da010934820fed8597d52cd2a0d540702d6252790af5ba3eb954f4442d",
     "mitigated-8.4.26": "sha256:f7ec4163e94fa2fcd1811a0be1cf93fd8d081bab270976c71dd49f7fd208e9ec",
     "patched-8.4.27": "sha256:59d22df835e3a79cef67d4cc0b2b20d923fa6dd24ba87413474bc9caac9ec4b7"
-  }
+  },
+  "horizon_parity": [
+    {
+      "tag": "vulnerable-8.4.26",
+      "local_config_digest": "sha256:8edea3da010934820fed8597d52cd2a0d540702d6252790af5ba3eb954f4442d",
+      "horizon_manifest_digest": "sha256:6c3873876fc58d816aef3f4c0dd4d0bd718931692408ac851927098a90020591",
+      "horizon_config_digest": "sha256:8edea3da010934820fed8597d52cd2a0d540702d6252790af5ba3eb954f4442d",
+      "identical_layers": true,
+      "runtime_config_matches": true
+    },
+    {
+      "tag": "mitigated-8.4.26",
+      "local_config_digest": "sha256:f7ec4163e94fa2fcd1811a0be1cf93fd8d081bab270976c71dd49f7fd208e9ec",
+      "horizon_manifest_digest": "sha256:30d9d3fdbcce3aee8181b7248cb275efaebdb641a4b5fd262ed15fd36eab43e8",
+      "horizon_config_digest": "sha256:f7ec4163e94fa2fcd1811a0be1cf93fd8d081bab270976c71dd49f7fd208e9ec",
+      "identical_layers": true,
+      "runtime_config_matches": true
+    },
+    {
+      "tag": "patched-8.4.27",
+      "local_config_digest": "sha256:59d22df835e3a79cef67d4cc0b2b20d923fa6dd24ba87413474bc9caac9ec4b7",
+      "horizon_manifest_digest": "sha256:3ee0e215c5616be5ffba752ac77f23acd87d28355d8502c427d2c3864276a7f1",
+      "horizon_config_digest": "sha256:59d22df835e3a79cef67d4cc0b2b20d923fa6dd24ba87413474bc9caac9ec4b7",
+      "identical_layers": true,
+      "runtime_config_matches": true
+    }
+  ],
+  "identity_note": "Docker Desktop classic image store reports config digest as Id; Horizon containerd store reports OCI manifest digest. Compared embedded config digest and every uncompressed rootfs layer digest."
 }

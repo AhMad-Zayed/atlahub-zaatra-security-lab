@@ -21,6 +21,8 @@ python3 validate.py
 
 Inspect the host before deploying: architecture, free disk, Docker/Compose version, `ss -lnt`, existing containers and Apache state. Do not overwrite a preexisting deployment directory. The source Dockerfile uses pinned upstream base digests for future rebuilds. A future rebuild is a new artifact and requires fresh validation.
 
+Docker Desktop's classic store reports the config digest as image ID; Horizon's containerd store reports an OCI manifest digest. The displayed IDs therefore differ. Parity was verified by reading each Horizon OCI manifest's embedded config digest (equal to the original local image ID), comparing every uncompressed RootFS layer digest and checking runtime configuration. `IMAGE-MANIFEST.json` records both identities. The transferred archive checksum also matched. See [Docker's containerd image-store documentation](https://docs.docker.com/engine/storage/containerd/).
+
 ## Authenticated SSH access
 
 From Windows PowerShell, keep this command running (authenticate interactively with your existing SSH credentials):

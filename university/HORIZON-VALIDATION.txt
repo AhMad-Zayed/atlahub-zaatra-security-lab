@@ -1,0 +1,83 @@
+PASS: vulnerable: HEAD, actual PHP header 8.4.26
+PASS: vulnerable: GET, actual PHP header 8.4.26
+PASS: vulnerable: branding and attribution
+PASS: vulnerable: browser protection headers
+PASS: vulnerable: mod_php and variant
+PASS: vulnerable: preserved upload-progress setting
+PASS: vulnerable: healthy without HTTP health probes
+PASS: vulnerable: loopback-only binding
+PASS: vulnerable: training image checksum
+PASS: vulnerable: evidence outside document root /training-evidence.jpg
+PASS: vulnerable: evidence outside document root /opt/atlahub-training/training-evidence.jpg
+PASS: vulnerable: existing lab shell remains locked
+PASS: vulnerable: bundled asset jerusalem.jpg
+PASS: vulnerable: bundled asset petra.jpg
+PASS: vulnerable: bundled asset istanbul.jpg
+PASS: vulnerable: bundled asset zaatra.css
+PASS: vulnerable: bundled asset zaatra.js
+PASS: vulnerable: PHP syntax checks
+PASS: mitigated: HEAD, actual PHP header 8.4.26
+PASS: mitigated: GET, actual PHP header 8.4.26
+PASS: mitigated: branding and attribution
+PASS: mitigated: browser protection headers
+PASS: mitigated: mod_php and variant
+PASS: mitigated: preserved upload-progress setting
+PASS: mitigated: healthy without HTTP health probes
+PASS: mitigated: loopback-only binding
+PASS: mitigated: training image checksum
+PASS: mitigated: evidence outside document root /training-evidence.jpg
+PASS: mitigated: evidence outside document root /opt/atlahub-training/training-evidence.jpg
+PASS: mitigated: existing lab shell remains locked
+PASS: mitigated: bundled asset jerusalem.jpg
+PASS: mitigated: bundled asset petra.jpg
+PASS: mitigated: bundled asset istanbul.jpg
+PASS: mitigated: bundled asset zaatra.css
+PASS: mitigated: bundled asset zaatra.js
+PASS: mitigated: PHP syntax checks
+PASS: patched: HEAD, actual PHP header 8.4.27
+PASS: patched: GET, actual PHP header 8.4.27
+PASS: patched: branding and attribution
+PASS: patched: browser protection headers
+PASS: patched: mod_php and variant
+PASS: patched: preserved upload-progress setting
+PASS: patched: healthy without HTTP health probes
+PASS: patched: loopback-only binding
+PASS: patched: training image checksum
+PASS: patched: evidence outside document root /training-evidence.jpg
+PASS: patched: evidence outside document root /opt/atlahub-training/training-evidence.jpg
+PASS: patched: existing lab shell remains locked
+PASS: patched: bundled asset jerusalem.jpg
+PASS: patched: bundled asset petra.jpg
+PASS: patched: bundled asset istanbul.jpg
+PASS: patched: bundled asset zaatra.css
+PASS: patched: bundled asset zaatra.js
+PASS: patched: PHP syntax checks
+All non-destructive acceptance checks passed. No exploit or reverse shell was executed.
+NAME                                     IMAGE                                         COMMAND                  SERVICE      CREATED          STATUS                    PORTS
+atlahub-zaatra-university-mitigated-1    atlahub/zaatra-university:mitigated-8.4.26    "docker-php-entrypoi…"   mitigated    23 seconds ago   Up 15 seconds (healthy)   127.0.0.1:28090->80/tcp
+atlahub-zaatra-university-patched-1      atlahub/zaatra-university:patched-8.4.27      "docker-php-entrypoi…"   patched      23 seconds ago   Up 14 seconds (healthy)   127.0.0.1:28089->80/tcp
+atlahub-zaatra-university-vulnerable-1   atlahub/zaatra-university:vulnerable-8.4.26   "docker-php-entrypoi…"   vulnerable   23 seconds ago   Up 16 seconds (healthy)   127.0.0.1:28088->80/tcp
+Starting Nmap 7.94SVN ( https://nmap.org ) at 2026-11-09 00:12 IST
+Nmap scan report for localhost (127.0.0.1)
+Host is up (0.0010s latency).
+
+PORT      STATE SERVICE
+28088/tcp open  unknown
+28089/tcp open  unknown
+28090/tcp open  unknown
+
+Nmap done: 1 IP address (1 host up) scanned in 0.31 seconds
+State  Recv-Q Send-Q Local Address:Port  Peer Address:PortProcess
+LISTEN 0      4096      127.0.0.54:53         0.0.0.0:*          
+LISTEN 0      4096       127.0.0.1:631        0.0.0.0:*          
+LISTEN 0      4096       127.0.0.1:28090      0.0.0.0:*          
+LISTEN 0      4096       127.0.0.1:28089      0.0.0.0:*          
+LISTEN 0      4096       127.0.0.1:28088      0.0.0.0:*          
+LISTEN 0      4096   127.0.0.53%lo:53         0.0.0.0:*          
+LISTEN 0      4096         0.0.0.0:22         0.0.0.0:*          
+LISTEN 0      4096           [::1]:631           [::]:*          
+LISTEN 0      4096            [::]:22            [::]:*          
+LISTEN 0      511                *:80               *:*          
+active
+5b76da39ef10eecfd9e7a90ee370d448760684f79174525e743dd772461e450e  /etc/apache2/sites-enabled/zaatra.conf
+fe5c19d05623d63f9a9eb75153a01b3fd047d8ed3b33f990a79727b00c770856  /var/www/zaatra/public/index.php

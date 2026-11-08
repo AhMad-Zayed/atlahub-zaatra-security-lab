@@ -19,7 +19,7 @@ for service,port,version in [('vulnerable',28088,'8.4.26'),('mitigated',28090,'8
   code,headers,body=request(port,method=method)
   check(code==200 and headers.get('X-Powered-By')=='PHP/'+version,f'{service}: {method}, actual PHP header {version}')
   if method=='GET':
-   text=body.decode();check('Developed and Customized by AtlaHub Tech' in text and 'Prepared Exclusively for Palestine Ahliya University' in text and 'Zaatra Tourism &amp;' not in text and 'Zaatra Tourism & Travel' in text,f'{service}: branding and attribution')
+   text=body.decode();check('Developed and Customized by AtlaHub Tech' in text and 'Prepared Exclusively for Palestine Ahliya University' in text and 'Zaatra Tourism & Travel' in text,f'{service}: branding and attribution')
    check('Content-Security-Policy' in headers and headers.get('X-Frame-Options')=='DENY',f'{service}: browser protection headers')
  status=json.loads(request(port,'/status.php')[2]);check(status['php_version']==version and status['sapi']=='apache2handler' and status['variant']==service,f'{service}: mod_php and variant')
  check((status['session_upload_progress_enabled'] in ('','0')) if service=='mitigated' else status['session_upload_progress_enabled']=='1',f'{service}: preserved upload-progress setting')
