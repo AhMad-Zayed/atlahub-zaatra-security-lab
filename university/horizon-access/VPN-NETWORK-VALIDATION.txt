@@ -1,0 +1,22 @@
+Backup: /opt/atlahub-zaatra-university/backups/vpn-network-20261108T232120Z
+-N ATLAHUB-KALI
+-A ATLAHUB-KALI -s 10.212.134.0/24 -j RETURN
+-A ATLAHUB-KALI -j DROP
+-P PREROUTING ACCEPT
+-A PREROUTING -d 192.168.151.5/32 -p tcp -m tcp --dport 28088 -j ATLAHUB-KALI
+-A PREROUTING -d 172.18.0.3/32 ! -i br-04e9aedfebef -j DROP
+-A PREROUTING -d 127.0.0.1/32 ! -i lo -p tcp -m tcp --dport 28090 -j DROP
+-A PREROUTING -d 172.18.0.4/32 ! -i br-04e9aedfebef -j DROP
+-A PREROUTING -d 127.0.0.1/32 ! -i lo -p tcp -m tcp --dport 28089 -j DROP
+-A PREROUTING -d 172.18.0.2/32 ! -i br-04e9aedfebef -j DROP
+-A PREROUTING -d 127.0.0.1/32 ! -i lo -p tcp -m tcp --dport 28088 -j DROP
+NAME                                     IMAGE                                         COMMAND                  SERVICE      CREATED             STATUS                       PORTS
+atlahub-zaatra-university-mitigated-1    atlahub/zaatra-university:mitigated-8.4.26    "docker-php-entrypoi…"   mitigated    About an hour ago   Up About an hour (healthy)   127.0.0.1:28090->80/tcp
+atlahub-zaatra-university-patched-1      atlahub/zaatra-university:patched-8.4.27      "docker-php-entrypoi…"   patched      About an hour ago   Up About an hour (healthy)   127.0.0.1:28089->80/tcp
+atlahub-zaatra-university-vulnerable-1   atlahub/zaatra-university:vulnerable-8.4.26   "docker-php-entrypoi…"   vulnerable   8 minutes ago       Up 8 minutes (healthy)       127.0.0.1:28088->80/tcp, 192.168.151.5:28088->80/tcp
+LISTEN 0      4096   192.168.151.5:28088      0.0.0.0:*          
+LISTEN 0      4096       127.0.0.1:28090      0.0.0.0:*          
+LISTEN 0      4096       127.0.0.1:28089      0.0.0.0:*          
+LISTEN 0      4096       127.0.0.1:28088      0.0.0.0:*          
+/etc/apache2/sites-enabled/zaatra.conf: OK
+/var/www/zaatra/public/index.php: OK
