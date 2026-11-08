@@ -1,0 +1,8 @@
+{
+  "archive_sha256": "712e0fe334e4905af12a2c4452e2eb1a95690367c2f10db4cca7142c064daeeb",
+  "images": {
+    "vulnerable-8.4.26": "sha256:8edea3da010934820fed8597d52cd2a0d540702d6252790af5ba3eb954f4442d",
+    "mitigated-8.4.26": "sha256:f7ec4163e94fa2fcd1811a0be1cf93fd8d081bab270976c71dd49f7fd208e9ec",
+    "patched-8.4.27": "sha256:59d22df835e3a79cef67d4cc0b2b20d923fa6dd24ba87413474bc9caac9ec4b7"
+  }
+}

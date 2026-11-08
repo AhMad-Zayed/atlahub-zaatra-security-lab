@@ -1,0 +1,55 @@
+PASS: vulnerable: HEAD, actual PHP header 8.4.26
+PASS: vulnerable: GET, actual PHP header 8.4.26
+PASS: vulnerable: branding and attribution
+PASS: vulnerable: browser protection headers
+PASS: vulnerable: mod_php and variant
+PASS: vulnerable: preserved upload-progress setting
+PASS: vulnerable: healthy without HTTP health probes
+PASS: vulnerable: loopback-only binding
+PASS: vulnerable: training image checksum
+PASS: vulnerable: evidence outside document root /training-evidence.jpg
+PASS: vulnerable: evidence outside document root /opt/atlahub-training/training-evidence.jpg
+PASS: vulnerable: existing lab shell remains locked
+PASS: vulnerable: bundled asset jerusalem.jpg
+PASS: vulnerable: bundled asset petra.jpg
+PASS: vulnerable: bundled asset istanbul.jpg
+PASS: vulnerable: bundled asset zaatra.css
+PASS: vulnerable: bundled asset zaatra.js
+PASS: vulnerable: PHP syntax checks
+PASS: mitigated: HEAD, actual PHP header 8.4.26
+PASS: mitigated: GET, actual PHP header 8.4.26
+PASS: mitigated: branding and attribution
+PASS: mitigated: browser protection headers
+PASS: mitigated: mod_php and variant
+PASS: mitigated: preserved upload-progress setting
+PASS: mitigated: healthy without HTTP health probes
+PASS: mitigated: loopback-only binding
+PASS: mitigated: training image checksum
+PASS: mitigated: evidence outside document root /training-evidence.jpg
+PASS: mitigated: evidence outside document root /opt/atlahub-training/training-evidence.jpg
+PASS: mitigated: existing lab shell remains locked
+PASS: mitigated: bundled asset jerusalem.jpg
+PASS: mitigated: bundled asset petra.jpg
+PASS: mitigated: bundled asset istanbul.jpg
+PASS: mitigated: bundled asset zaatra.css
+PASS: mitigated: bundled asset zaatra.js
+PASS: mitigated: PHP syntax checks
+PASS: patched: HEAD, actual PHP header 8.4.27
+PASS: patched: GET, actual PHP header 8.4.27
+PASS: patched: branding and attribution
+PASS: patched: browser protection headers
+PASS: patched: mod_php and variant
+PASS: patched: preserved upload-progress setting
+PASS: patched: healthy without HTTP health probes
+PASS: patched: loopback-only binding
+PASS: patched: training image checksum
+PASS: patched: evidence outside document root /training-evidence.jpg
+PASS: patched: evidence outside document root /opt/atlahub-training/training-evidence.jpg
+PASS: patched: existing lab shell remains locked
+PASS: patched: bundled asset jerusalem.jpg
+PASS: patched: bundled asset petra.jpg
+PASS: patched: bundled asset istanbul.jpg
+PASS: patched: bundled asset zaatra.css
+PASS: patched: bundled asset zaatra.js
+PASS: patched: PHP syntax checks
+All non-destructive acceptance checks passed. No exploit or reverse shell was executed.
