@@ -1,0 +1,16 @@
+Backup: /opt/atlahub-zaatra-university/backups/unrestricted-source-20261109T202432Z
+-P PREROUTING ACCEPT
+-A PREROUTING -d 172.18.0.3/32 ! -i br-04e9aedfebef -j DROP
+-A PREROUTING -d 127.0.0.1/32 ! -i lo -p tcp -m tcp --dport 28090 -j DROP
+-A PREROUTING -d 172.18.0.4/32 ! -i br-04e9aedfebef -j DROP
+-A PREROUTING -d 127.0.0.1/32 ! -i lo -p tcp -m tcp --dport 28089 -j DROP
+-A PREROUTING -d 172.18.0.2/32 ! -i br-04e9aedfebef -j DROP
+-A PREROUTING -d 127.0.0.1/32 ! -i lo -p tcp -m tcp --dport 28088 -j DROP
+disabled
+NAME                                     IMAGE                                         COMMAND                  SERVICE      CREATED        STATUS                  PORTS
+atlahub-zaatra-university-mitigated-1    atlahub/zaatra-university:mitigated-8.4.26    "docker-php-entrypoi…"   mitigated    22 hours ago   Up 22 hours (healthy)   127.0.0.1:28090->80/tcp
+atlahub-zaatra-university-patched-1      atlahub/zaatra-university:patched-8.4.27      "docker-php-entrypoi…"   patched      22 hours ago   Up 22 hours (healthy)   127.0.0.1:28089->80/tcp
+atlahub-zaatra-university-vulnerable-1   atlahub/zaatra-university:vulnerable-8.4.26   "docker-php-entrypoi…"   vulnerable   21 hours ago   Up 21 hours (healthy)   127.0.0.1:28088->80/tcp, 192.168.151.5:28088->80/tcp
+/etc/apache2/sites-enabled/zaatra.conf: OK
+/var/www/zaatra/public/index.php: OK
+Removed "/etc/systemd/system/multi-user.target.wants/atlahub-kali-firewall.service".

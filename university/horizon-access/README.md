@@ -1,4 +1,21 @@
-# Direct VPN network access — 2026-11-09
+# Current access: unrestricted source IP — 2026-11-09
+
+At the user's explicit request, the source-IP allowlist has been removed. Any source with network reachability to **http://192.168.151.5:28088/** can now access the target. It remains bound only to 192.168.151.5 and loopback. No public-interface mapping was added. Mitigated and patched services remain loopback-only.
+
+The ATLAHUB-KALI PREROUTING jump was removed, and `atlahub-kali-firewall.service` was disabled and stopped. The unreferenced chain, script and unit are retained for rollback, and do not currently filter traffic. **Do not start that service unless you intend to restore the VPN subnet restriction.**
+
+Backup: `/opt/atlahub-zaatra-university/backups/unrestricted-source-20261109T202432Z/`. Verified direct HTTP 200, all three containers healthy, no custom source-filter jump remaining, service disabled and original host application checksums unchanged. See `UNRESTRICTED-SOURCE-VALIDATION.txt`. No independent external client outside the former VPN subnet was available for an end-to-end test.
+
+Current start command:
+
+```sh
+cd /opt/atlahub-zaatra-university
+docker compose -f compose.yaml -f compose.kali.yaml up -d --no-build --pull never
+```
+
+To restore the prior VPN-only policy, explicitly run `systemctl enable --now atlahub-kali-firewall.service`; its retained script reinstalls the 10.212.134.0/24 rule. To return entirely to loopback-only access, apply the base Compose file alone as described below.
+
+## Historical VPN-restricted configuration (superseded)
 
 This optional Horizon-only configuration supersedes the original loopback-only access for the vulnerable service. The base Compose and the Windows lab remain unchanged. Mitigated and patched services remain loopback-only.
 
